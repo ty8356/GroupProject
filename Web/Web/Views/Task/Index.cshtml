@@ -1,0 +1,27 @@
+﻿@model IEnumerable<Web.Models.Task>
+
+@{
+    ViewBag.Title = "To-Do List";
+}
+
+<div class="row">
+    <h2>To-Do List</h2>
+</div>
+
+<p>
+    @Html.ActionLink("Add Task", "Create", "Task")
+</p>
+
+<table class="table">
+    @foreach (var item in Model)
+    {
+        <tr class="col-md-4">
+            <td class="center-block">
+                <h4><b>Name:</b> @item.Name</h4>
+                <h4><b>Notes:</b> @item.Notes</h4>
+                <h4><b>Date:</b> @item.Date.ToString("MM/dd/yyyy")</h4>
+                <p style="text-align: center;"><a href='@Url.Action("Update", "Task", new { id = item.Id })' class="btn btn-default">Edit Task</a></p>
+            </td>
+        </tr>
+    }
+</table>
