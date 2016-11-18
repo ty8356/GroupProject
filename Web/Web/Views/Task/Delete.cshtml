@@ -1,7 +1,22 @@
-﻿
+﻿@model Web.Models.Task
+
 @{
     ViewBag.Title = "Delete";
 }
 
 <h2>Delete</h2>
+@using (Html.BeginForm("Delete", "Task", null, FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+    <h4>Are you sure you want to delete the task named "@Model.Name"?</h4>
+    <hr />
+    <input class="btn btn-default" type="submit" value="Delete"/>
+    @Html.ActionLink("Cancel", "Index", "Task")
 
+    @Html.HiddenFor(m => m.IsCompleted)
+    @Html.HiddenFor(m => m.CompletedDate)
+    @Html.HiddenFor(m => m.Id)
+    @Html.HiddenFor(m => m.Name)
+    @Html.HiddenFor(m => m.Date)
+    @Html.HiddenFor(m => m.Notes)
+}

@@ -3,25 +3,65 @@
 @{
     ViewBag.Title = "To-Do List";
 }
+<div class="container">
+    <div class="row">
+        <h1>Tasks</h1>
+    </div>
 
-<div class="row">
-    <h2>To-Do List</h2>
+    <div class="container">
+        <h3 class="title-bar">Incomplete Tasks</h3>
+
+        @foreach (var item in Model)
+        {
+            if (item.IsCompleted == false)
+            {
+                <div class="task">
+                    <h4 class="task-title"><b><span>@item.Name</span></b><span class="task-date">Due on @item.Date.ToString("MM/dd/yyyy")</span></h4>
+                    <h4 class="task-notes">@item.Notes</h4>
+                    <p style="text-align: center; padding-top: 5px;">
+                        <a href='@Url.Action("Update", "Task", new {id = item.Id})' class="btn btn-default">Edit Task</a>
+                        <a onclick="markComplete(@item.Id)" class="btn btn-default">Complete</a>
+                    </p>
+                </div>
+            }
+        }
+        <a href='@Url.Action("Create", "Task")'>
+            <div class="task" style="text-align: center; color: black;">
+                <br /><br /><h4>Add new task...</h4><br /><br />
+            </div>
+        </a>
+    </div>
+    
+    <div class="container">
+        <h3 class="title-bar">Completed Tasks</h3>
+        @if (!Model.Any(t => t.IsCompleted))
+        {
+            <div class="task" style="text-align: center; color: black;">
+                <br /><br /><h4>None yet...</h4><br /><br />
+            </div>
+        }
+
+        @foreach (var item in Model)
+        {
+            if (item.IsCompleted)
+            {
+                <div class="task">
+                    <h4 class="task-title"><b><span>@item.Name</span></b><span class="task-date">Completed on @item.CompletedDate.ToString("MM/dd/yyyy")</span></h4>
+                    <h4 class="task-notes">@item.Notes</h4>
+                </div>
+            }
+        }
+    </div>
 </div>
 
-<p>
-    @Html.ActionLink("Add Task", "Create", "Task")
-</p>
-
-<table class="table">
-    @foreach (var item in Model)
-    {
-        <tr class="col-md-4">
-            <td class="center-block">
-                <h4><b>Name:</b> @item.Name</h4>
-                <h4><b>Notes:</b> @item.Notes</h4>
-                <h4><b>Date:</b> @item.Date.ToString("MM/dd/yyyy")</h4>
-                <p style="text-align: center;"><a href='@Url.Action("Update", "Task", new { id = item.Id })' class="btn btn-default">Edit Task</a></p>
-            </td>
-        </tr>
+<script>
+    function markComplete(id) {
+        $.post({
+            url: '@Url.Action("MarkComplete", "Task")',
+            data: 'id=' + id,
+            success: function () {
+                window.location = '@Url.Action("Index", "Task")';
+            }
+        });
     }
-</table>
+</script>

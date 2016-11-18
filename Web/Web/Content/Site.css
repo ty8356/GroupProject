@@ -22,3 +22,38 @@ select,
 textarea {
     max-width: 280px;
 }
+
+.row {
+     margin-top: 20px;
+     margin-bottom: 20px;
+}
+
+.title-bar {
+    background: #222222;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.task {
+    float: left;
+    width: 32.2%;
+    padding: 5px;
+    margin: 5px;
+    border: 2px solid black;
+    border-radius: 5px;
+}
+
+.task-title {
+    border-bottom: 1px solid;
+    padding-bottom: 10px;
+}
+
+.task-date {
+    float: right;
+    font-size: small;
+}
+
+.task-notes {
+    text-align: left;
+}

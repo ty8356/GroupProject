@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using System.Web.Mvc;
 using Web.Context;
 using Web.Models;
@@ -52,9 +53,34 @@ namespace Web.Controllers
             return RedirectToAction("Index", "Task");
         }
 
-        public ActionResult Delete()
+        public ActionResult Delete(int id)
         {
-            return View();
+            var result = db.Tasks.Find(id);
+            return View(result);
+        }
+
+        [HttpPost]
+        public ActionResult Delete(Task task)
+        {
+            task.Date = task.Date;
+            db.Tasks.Remove(task);
+            db.SaveChanges();
+
+            return RedirectToAction("Index", "Task");
+        }
+
+        [HttpPost]
+        public ActionResult MarkComplete(int id)
+        {
+            var result = db.Tasks.Find(id);
+            if (result != null)
+            {
+                result.CompletedDate = DateTime.Today;
+                result.IsCompleted = true;
+                db.SaveChanges();
+            }
+
+            return Json(string.Empty);
         }
     }
 }

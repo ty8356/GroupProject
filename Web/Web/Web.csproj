@@ -146,6 +146,14 @@
     <Compile Include="Migrations\201611100017466_DropDescriptionAddNotes.Designer.cs">
       <DependentUpon>201611100017466_DropDescriptionAddNotes.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201611162244104_EditTask.cs" />
+    <Compile Include="Migrations\201611162244104_EditTask.Designer.cs">
+      <DependentUpon>201611162244104_EditTask.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201611170002275_AddedCompletedDate.cs" />
+    <Compile Include="Migrations\201611170002275_AddedCompletedDate.Designer.cs">
+      <DependentUpon>201611170002275_AddedCompletedDate.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Task.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -159,9 +167,13 @@
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
-    <Content Include="Scripts\jquery-1.10.2.js" />
-    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <None Include="Scripts\jquery-3.1.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.1.1.js" />
+    <Content Include="Scripts\jquery-3.1.1.min.js" />
+    <Content Include="Scripts\jquery-3.1.1.slim.js" />
+    <Content Include="Scripts\jquery-3.1.1.slim.min.js" />
+    <Content Include="Scripts\jquery-3.1.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.1.1.min.map" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
@@ -199,7 +211,6 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
-    <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201611092310315_InitialTasksCreate.resx">
@@ -210,6 +221,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201611100017466_DropDescriptionAddNotes.resx">
       <DependentUpon>201611100017466_DropDescriptionAddNotes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611162244104_EditTask.resx">
+      <DependentUpon>201611162244104_EditTask.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611170002275_AddedCompletedDate.resx">
+      <DependentUpon>201611170002275_AddedCompletedDate.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

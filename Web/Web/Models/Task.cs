@@ -14,5 +14,7 @@ namespace Web.Models
 
         [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:MM/dd/yyyy}")]
         public DateTime Date { get; set; }
+
+        public DateTime CompletedDate { get; set; }
     }
 }
