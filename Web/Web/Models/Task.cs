@@ -12,8 +12,10 @@ namespace Web.Models
         public string Notes { get; set; }
         public bool IsCompleted { get; set; }
 
+        [Required]
+        [Display(Name="Due Date")]
         [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:MM/dd/yyyy}")]
-        public DateTime Date { get; set; }
+        public DateTime DueDate { get; set; }
 
         public DateTime CompletedDate { get; set; }
     }

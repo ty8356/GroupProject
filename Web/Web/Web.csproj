@@ -154,6 +154,10 @@
     <Compile Include="Migrations\201611170002275_AddedCompletedDate.Designer.cs">
       <DependentUpon>201611170002275_AddedCompletedDate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201612072309057_ChangedDateToDueDate.cs" />
+    <Compile Include="Migrations\201612072309057_ChangedDateToDueDate.Designer.cs">
+      <DependentUpon>201612072309057_ChangedDateToDueDate.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Task.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -227,6 +231,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201611170002275_AddedCompletedDate.resx">
       <DependentUpon>201611170002275_AddedCompletedDate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201612072309057_ChangedDateToDueDate.resx">
+      <DependentUpon>201612072309057_ChangedDateToDueDate.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

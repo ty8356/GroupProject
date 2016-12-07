@@ -46,7 +46,7 @@ namespace Web.Controllers
             if (result != null)
             {
                 result.Name = task.Name;
-                result.Date = task.Date;
+                result.DueDate = task.DueDate;
                 result.Notes = task.Notes;
                 db.SaveChanges();
             }

@@ -16,7 +16,7 @@
             if (item.IsCompleted == false)
             {
                 <div class="task">
-                    <h4 class="task-title"><b><span>@item.Name</span></b><span class="task-date">Due on @item.Date.ToString("MM/dd/yyyy")</span></h4>
+                    <h4 class="task-title"><b><span>@item.Name</span></b><span class="task-date">Due on @item.DueDate.ToString("MM/dd/yyyy")</span></h4>
                     <h4 class="task-notes">@item.Notes</h4>
                     <p style="text-align: center; padding-top: 5px;">
                         <a href='@Url.Action("Update", "Task", new {id = item.Id})' class="btn btn-default">Edit Task</a>

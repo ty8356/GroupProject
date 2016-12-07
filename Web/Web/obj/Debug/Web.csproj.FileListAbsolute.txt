@@ -97,3 +97,4 @@ C:\Users\ty835\Documents\Github\GroupProject\Web\Web\obj\Debug\Web.Migrations.Ad
 C:\Users\ty835\Documents\Github\GroupProject\Web\Web\obj\Debug\Web.csproj.GenerateResource.Cache
 C:\Users\ty835\Documents\Github\GroupProject\Web\Web\obj\Debug\Web.dll
 C:\Users\ty835\Documents\Github\GroupProject\Web\Web\obj\Debug\Web.pdb
+C:\Users\ty835\Documents\Github\GroupProject\Web\Web\obj\Debug\Web.Migrations.ChangedDateToDueDate.resources
