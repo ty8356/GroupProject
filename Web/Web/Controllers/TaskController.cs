@@ -25,6 +25,7 @@ namespace Web.Controllers
         [HttpPost]
         public ActionResult Create(Task task)
         {
+            task.CompletedDate = new DateTime(2005, 1, 1);
             db.Tasks.Add(task);
             db.SaveChanges();
 
@@ -62,8 +63,8 @@ namespace Web.Controllers
         [HttpPost]
         public ActionResult Delete(Task task)
         {
-            task.Date = task.Date;
-            db.Tasks.Remove(task);
+            var result = db.Tasks.Find(task.Id);
+            db.Tasks.Remove(result);
             db.SaveChanges();
 
             return RedirectToAction("Index", "Task");
